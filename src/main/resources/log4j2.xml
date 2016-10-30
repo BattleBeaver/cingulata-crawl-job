@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration status="WARN">
+    <appenders>
+        <Console name="console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} [%t] - %msg%n"/>
+        </Console>
+
+        <File name="fileout" fileName="log/sinker.log">
+            <PatternLayout>
+                <Pattern>%d{HH:mm:ss} %d %p %c{1.} [%t] %m%n</Pattern>
+            </PatternLayout>
+        </File>
+    </appenders>
+
+    <loggers>
+        <root level="debug">
+            <appender-ref ref="console" level="info"/>
+            <appender-ref ref="fileout" level="info"/>
+        </root>
+    </loggers>
+</configuration>
